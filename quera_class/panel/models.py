@@ -9,15 +9,3 @@ class CustomeUser(AbstractUser , PermissionsMixin):
         ('mentor' , 'Mentor')
     )
     user_type = models.CharField(max_length=10 , choices=USER_TYPE_CHOICE)
-
-class Student(models.Model):
-    user = models.OneToOneField(CustomeUser , on_delete=models.CASCADE)
-    clas = models.ManyToManyField(Class , verbose_name='class')
-
-class Teacher(models.Model):
-    user = models.OneToOneField(CustomeUser , on_delete=models.CASCADE)
-    clas = models.ManyToManyField(Class , verbose_name='class')
-
-class Mentor(models.Model):
-    user = models.OneToOneField(CustomeUser , on_delete=models.CASCADE)
-    clas = models.ManyToManyField(Class , verbose_name='class')

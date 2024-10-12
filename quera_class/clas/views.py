@@ -14,11 +14,11 @@ from .serializers import *
 class AddClass(CreateAPIView):
     queryset = Class.objects.all()
     serializer_class = ClassSerializer
-    permission_classes = [IsTeacher]
+    permission_classes = [IsClassTeacher]
 
 class EditClass(RetrieveUpdateDestroyAPIView):
     queryset = Class.objects.all()
     serializer_class = ClassSerializer
-    permission_classes = [IsTeacher]
+    permission_classes = [IsClassTeacher]
 
 # Create your views here.
